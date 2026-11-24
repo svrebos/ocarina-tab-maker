@@ -1,0 +1,20 @@
+/* print.css - only the tab is printed; see the notes below. */
+
+/* Printing: only the tab is printed. Every line of the tab is its own block
+   that is never split across pages; the title stays with the first line. */
+@page { margin: 14mm; }
+
+@media print {
+  html, body { background: #fff !important; min-height: 0; }
+  .wrap { max-width: none; padding: 0; }
+  .wrap > *:not(#output-panel) { display: none !important; }
+  #output-panel { border: 0; box-shadow: none; padding: 0; margin: 0; background: #fff; }
+  #output-panel .tabbar, #output-panel h2, #output-panel .legend, #messages { display: none !important; }
+  .paper { border: 0; padding: 0; overflow: visible; background: #fff; }
+  .tabpart { break-inside: avoid; page-break-inside: avoid; }
+  .tabpart.head { break-after: avoid; page-break-after: avoid; }
+  .paper svg { width: 100% !important; max-width: min(100%, calc(var(--w) * 0.9px)) !important; }
+
+  /* The Ko-fi button is added to the page by Ko-fi's own script; never print it. */
+  [class*="floatingchat"], [class*="floating-chat"], [class*="kofi"], iframe[src*="ko-fi.com"], .consent { display: none !important; }
+}

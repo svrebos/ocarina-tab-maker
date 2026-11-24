@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocarina Tab Maker</title>
+<meta name="description" content="Type notes, get 12-hole or 6-hole ocarina fingering tabs. Free and open source.">
+<!-- The ?v=2 after each file name makes browsers fetch the new file after an update.
+     Raise the number in all of these links whenever you publish changes. -->
+<link rel="stylesheet" href="css/base.css?v=2">
+<link rel="stylesheet" href="css/layout.css?v=2">
+<link rel="stylesheet" href="css/components.css?v=2">
+<link rel="stylesheet" href="css/print.css?v=2">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="crest" id="crest" aria-hidden="true"></div>
+    <h1>Ocarina <span>Tab</span> Maker</h1>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <p class="lede" id="lede"></p>
+  </header>
+
+  <section class="panel" id="input-panel">
+    <h2>1 &middot; Write your notes</h2>
+    <fieldset class="typesel" id="typesel">
+      <legend>Ocarina type</legend>
+      <!-- one option per ocarina in js/ocarinas/, added by js/app.js -->
+    </fieldset>
+    <label class="field" for="title">Title (optional)</label>
+    <input id="title" type="text" maxlength="80" autocomplete="off" placeholder="e.g. Ode to Joy" class="titlein">
+    <label class="field" for="subtitle" style="margin-top:14px">Subtitle (optional)</label>
+    <input id="subtitle" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Beethoven, arranged for ocarina" class="titlein">
+    <label class="field" for="notes" style="margin-top:14px">Notes (press Enter to start a new line)</label>
+    <textarea id="notes" spellcheck="false" autocapitalize="characters" autocomplete="off"></textarea>
+    <p class="hint" id="noteHint"></p>
+
+    <div class="palette" id="palette" role="group" aria-label="Insert a note"></div>
+
+    <div class="actions">
+      <button class="primary" id="show" type="button">Show tab</button>
+      <button id="newline" type="button">New line &#8629;</button>
+      <button id="rest" type="button">Rest &ndash;</button>
+      <button id="clear" type="button">Clear</button>
+      <label class="wrapctl" for="wrapAt">Wrap long lines after
+        <input id="wrapAt" type="number" min="1" max="24" value="8" inputmode="numeric"> notes
+      </label>
+    </div>
+    <div id="messages" role="status" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" id="output-panel">
+    <h2>2 &middot; Your tab</h2>
+    <div class="tabbar">
+      <button id="dl-svg" type="button">Download SVG</button>
+      <button id="dl-png" type="button">Download PNG</button>
+      <button id="print" type="button">Print</button>
+      <button id="share" type="button">Copy share link</button>
+    </div>
+    <div class="paper" id="tab"></div>
+    <div class="legend" id="legend" aria-hidden="true"></div>
+  </section>
+
+  <section class="panel help">
+    <details>
+      <summary id="chartSum">Fingering chart</summary>
+      <div class="paper" id="chart" style="margin-top:12px"></div>
+      <p class="hint" id="chartHint"></p>
+    </details>
+    <details>
+      <summary>How to read the tab</summary>
+      <ul id="howList"></ul>
+    </details>
+    <details>
+      <summary>Saving your tabs</summary>
+      <ul>
+        <li>Nothing is stored on a server. Instead, the address of this page contains your whole tab: the notes, title, subtitle, line width and ocarina type.</li>
+        <li>Press <strong>Show tab</strong>, then bookmark the page (Ctrl+D, or Cmd+D on a Mac). The bookmark is named after your title.</li>
+        <li>Tip: keep all your tabs together in one bookmark folder, for example &ldquo;Ocarina tabs&rdquo;. That is your collection, and it syncs with your browser account.</li>
+        <li>The <strong>Copy share link</strong> button gives you the same address, handy for sending a tab to someone else.</li>
+        <li>Changed something? Press <strong>Show tab</strong> again before bookmarking, so the address is up to date.</li>
+      </ul>
+    </details>
+  </section>
+
+  <footer>
+    <p>Free and open source (MIT for the code, CC BY 4.0 for the ocarina artwork). Your notes are processed in your browser and never sent anywhere. This page sets no cookies itself.</p>
+    <p>
+      Voluntary donations go through Ko-fi (<a href="https://ko-fi.com/artisifact" target="_blank" rel="noopener">ko-fi.com/artisifact</a>).
+      The &ldquo;Tip Me&rdquo; button is only loaded from Ko-fi, which sets cookies, if you allow it.
+      <button type="button" class="linklike" id="cookie-settings">Cookie settings</button>
+    </p>
+    <p>Independent fan-made tool. Not affiliated with, endorsed by or connected to Nintendo.</p>
+  </footer>
+</div>
+
+<aside class="consent" id="consent" role="region" aria-label="Cookie notice" hidden>
+  <p>
+    <strong>Cookies.</strong> This page sets no cookies itself. The small &ldquo;Tip Me&rdquo; donation button is provided by Ko-fi,
+    which sets cookies when it loads. Do you want to load it? You can change your mind at any time with &ldquo;Cookie settings&rdquo;
+    at the bottom of the page. Cookies that Ko-fi already set can be removed in your browser settings.
+  </p>
+  <div class="consent-actions">
+    <button type="button" id="consent-no">No thanks</button>
+    <button type="button" id="consent-yes">Allow the Ko-fi button</button>
+  </div>
+</aside>
+
+<!-- Plain scripts, no build step. Order matters: each file uses the ones above it.
+     To support another ocarina, add its file next to the other ocarina-*.js lines. -->
+<script src="js/dom.js?v=2"></script>
+<script src="js/notes.js?v=2"></script>
+<script src="js/ocarinas/registry.js?v=2"></script>
+<script src="js/ocarinas/ocarina-12.js?v=2"></script>
+<script src="js/ocarinas/ocarina-6.js?v=2"></script>
+<script src="js/tab-drawing.js?v=2"></script>
+<script src="js/share.js?v=2"></script>
+<script src="js/export.js?v=2"></script>
+<script src="js/app.js?v=2"></script>
+<script src="js/support.js?v=2"></script>
+</body>
+</html>

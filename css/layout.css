@@ -1,0 +1,60 @@
+/* layout.css - page structure: header, panels, collapsible help sections, footer. */
+
+header { padding: 40px 0 6px; text-align: center; }
+
+.crest { color: var(--gold); line-height: 0; margin-bottom: 10px; filter: drop-shadow(0 2px 10px rgba(227, 196, 104, .35)); }
+
+.crest svg { width: 92px; height: auto; }
+
+h1 {
+  font: 700 clamp(26px, 6vw, 44px)/1.1 var(--serif);
+  margin: 0;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+}
+
+h1 span { color: #fff; }
+
+.ornament { display: flex; align-items: center; gap: 12px; max-width: 420px; margin: 16px auto 14px; }
+
+.ornament::before, .ornament::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-line)); }
+
+.ornament::after { background: linear-gradient(270deg, transparent, var(--gold-line)); }
+
+.ornament i { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); }
+
+.lede { margin: 0 auto; color: var(--on-dark); max-width: 60ch; }
+
+h2 {
+  font: 700 18px/1.2 var(--serif);
+  text-transform: uppercase; letter-spacing: .12em; color: var(--forest);
+  margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-line);
+}
+
+section.panel {
+  background: var(--parchment);
+  border: 1px solid var(--gold-dark);
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 4px var(--parchment), inset 0 0 0 5px var(--gold-line), 0 14px 34px rgba(0, 0, 0, .4);
+  padding: 26px 26px;
+  margin-top: 22px;
+}
+
+details { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--gold-line); }
+
+details:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+
+summary { cursor: pointer; font: 700 17px/1.2 var(--serif); text-transform: uppercase; letter-spacing: .1em; color: var(--forest); padding: 4px 0; }
+
+footer { margin-top: 32px; color: var(--on-dark); font-size: 14px; text-align: center; opacity: .85; }
+
+footer a { color: var(--gold); }
+footer p { margin: 0 0 8px; }
+
+.help ul { margin: 6px 0 0; padding-left: 20px; }
+
+@media (max-width: 520px) {
+  section.panel { padding: 20px 16px; }
+}
