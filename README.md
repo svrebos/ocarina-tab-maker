@@ -1,3 +1,5 @@
+This website is live: [Ocarina Tab Maker](https://svrebos.github.io/ocarina-tab-maker)
+
 # Ocarina Tab Maker
 
 A small, dependency-free web page that turns typed notes into fingering tabs for a **12-hole ocarina** (alto/tenor C, range A4–F6, 21 notes) or a **6-hole ocarina** (C, range C5–E6, 17 notes).
