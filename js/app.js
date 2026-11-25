@@ -16,6 +16,7 @@
     legend: $('legend'), typeSelector: $('typesel')
   };
 
+  const pageTitle = document.title; // the full title from index.html, used when there is no tab title
   let ocarina = ocarinas.list[0]; // the selected ocarina
   let currentTab = null;          // the tab on screen, for the downloads
 
@@ -53,7 +54,7 @@
     showProblems(parsed);
 
     const title = el.title.value.trim();
-    document.title = title ? title + ' – Ocarina Tab Maker' : 'Ocarina Tab Maker'; // becomes the bookmark name
+    document.title = title ? title + ' – Ocarina Tab Maker' : pageTitle; // becomes the bookmark name
     // replaceState does not trigger 'hashchange', so this does not reload the form.
     try { history.replaceState(null, '', '#' + share.encode(readState())); } catch (e) { /* file:// or sandbox */ }
   }

@@ -3,22 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ocarina Tab Maker</title>
-<meta name="description" content="Type notes, get 12-hole or 6-hole ocarina fingering tabs. Free and open source.">
-<!-- The ?v=2 after each file name makes browsers fetch the new file after an update.
+<title>Ocarina Tab Maker – free ocarina tabs and fingering charts (12-hole and 6-hole)</title>
+<meta name="description" content="Free ocarina tab maker: type your notes and get printable fingering tabs for 12-hole and 6-hole ocarinas. Download as SVG or PNG, or share by link. Open source.">
+<meta name="google-site-verification" content="fP4FEIDLOSxKXRAqqAwo_QOYpYRwdWvzkh6D4n8SF3g" />
+<link rel="canonical" href="https://svrebos.github.io/ocarina-tab-maker/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ocarina Tab Maker">
+<meta property="og:title" content="Ocarina Tab Maker – free ocarina tabs and fingering charts">
+<meta property="og:description" content="Type your notes and get printable fingering tabs for 12-hole and 6-hole ocarinas. Free and open source.">
+<meta property="og:url" content="https://svrebos.github.io/ocarina-tab-maker/">
+<meta property="og:image" content="https://svrebos.github.io/ocarina-tab-maker/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ocarina fingering tab with the note names under each ocarina picture">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Ocarina Tab Maker","url":"https://svrebos.github.io/ocarina-tab-maker/","description":"Free tool that turns typed notes into printable ocarina fingering tabs for 12-hole and 6-hole ocarinas.","applicationCategory":"MusicApplication","operatingSystem":"Any (web browser)","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<!-- The ?v=3 after each file name makes browsers fetch the new file after an update.
      Raise the number in all of these links whenever you publish changes. -->
-<link rel="stylesheet" href="css/base.css?v=2">
-<link rel="stylesheet" href="css/layout.css?v=2">
-<link rel="stylesheet" href="css/components.css?v=2">
-<link rel="stylesheet" href="css/print.css?v=2">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/layout.css?v=3">
+<link rel="stylesheet" href="css/components.css?v=3">
+<link rel="stylesheet" href="css/print.css?v=3">
 </head>
 <body>
+<noscript><p style="margin:0;padding:12px 16px;background:#fff8e1;color:#2b2118;text-align:center">Ocarina Tab Maker needs JavaScript to turn your notes into fingering tabs. Please enable JavaScript in your browser.</p></noscript>
 <div class="wrap">
   <header>
     <div class="crest" id="crest" aria-hidden="true"></div>
     <h1>Ocarina <span>Tab</span> Maker</h1>
     <div class="ornament" aria-hidden="true"><i></i></div>
-    <p class="lede" id="lede"></p>
+    <p class="lede" id="lede">Type your notes, mark where each new line starts, and get a printable fingering tab for a 12-hole ocarina (range A4–F6).</p>
   </header>
 
   <section class="panel" id="input-panel">
@@ -108,15 +127,15 @@
 
 <!-- Plain scripts, no build step. Order matters: each file uses the ones above it.
      To support another ocarina, add its file next to the other ocarina-*.js lines. -->
-<script src="js/dom.js?v=2"></script>
-<script src="js/notes.js?v=2"></script>
-<script src="js/ocarinas/registry.js?v=2"></script>
-<script src="js/ocarinas/ocarina-12.js?v=2"></script>
-<script src="js/ocarinas/ocarina-6.js?v=2"></script>
-<script src="js/tab-drawing.js?v=2"></script>
-<script src="js/share.js?v=2"></script>
-<script src="js/export.js?v=2"></script>
-<script src="js/app.js?v=2"></script>
-<script src="js/support.js?v=2"></script>
+<script src="js/dom.js?v=3"></script>
+<script src="js/notes.js?v=3"></script>
+<script src="js/ocarinas/registry.js?v=3"></script>
+<script src="js/ocarinas/ocarina-12.js?v=3"></script>
+<script src="js/ocarinas/ocarina-6.js?v=3"></script>
+<script src="js/tab-drawing.js?v=3"></script>
+<script src="js/share.js?v=3"></script>
+<script src="js/export.js?v=3"></script>
+<script src="js/app.js?v=3"></script>
+<script src="js/support.js?v=3"></script>
 </body>
 </html>

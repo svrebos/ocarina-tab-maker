@@ -61,7 +61,7 @@
     id: '6',
     label: '6-hole',
     artwork: {
-      box: { x: 888, y: 502, w: 184, h: 153 }, // visible area incl. strokes
+      box: { x: 868, y: 502, w: 184, h: 153 }, // visible area incl. strokes
       scale: 1.3,
       tilt: -10.320853,
       holeStroke: 3,
